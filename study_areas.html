@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+ 
+      /* Add a container for the circle and marker */
+      .marker-container {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Add a background color to the circle */
+      .circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        z-index:-1;
+        position: absolute;
+        background-color: rgba(255, 0, 0, 0.3); /* Adjust the color and opacity as needed */
+        animation: flashing 1s infinite; /* Apply the flashing animation to the circle */
+      }
+
+      /* Add a silhouette using a pseudo-element */
+      .marker-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        border-radius: inherit;
+        background-image: inherit;
+      }
+
+
+      @keyframes flashing {
+        0% {
+          box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7); /* Adjust the shadow color and size as needed */
+        }
+        50% {
+          box-shadow: none;
+        }
+        100% {
+          box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7); /* Adjust the shadow color and size as needed */
+        }
+      }
+
+      
+      .mapboxgl-popup {
+        width: 700px !important; /* Increase the width as needed */
+        max-height: 500px; /* Optional: Set a maximum height */
+      }
+      .mapboxgl-popup-content {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        width: 400px;
+      }
+
+      
+      .popup-content {
+        display: flex;
+        flex-direction: row; /* Change direction to row */
+        justify-content: space-between;
+        max-width:550px;
+      }
+      
+      .popup-image-container {
+        flex: 0 0 30%; /* Do not grow, do not shrink, start at 50% width */
+        margin-bottom: 10px;
+        padding-right:5px;
+      }
+      
+      .circular-image {
+        width: 100%; /* Full width of its container */
+        height: auto; /* Adjust height to maintain aspect ratio */
+        border-radius: 50%;
+      }
+      
+      .popup-text-container {
+        flex: 1; /* Allow this container to grow if needed */
+        max-width: 70%; /* Limit the maximum width */
+      }
+      
+      
+      
+    </style>
+  </head>
+
+  <body>
+    
+    <div id="map"></div>
+
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoianNoYXBpcjEiLCJhIjoiY2xqZ2w1czR6MDlkajNibjZza2M0NWF2aCJ9.HzDUGa8OFKUtnZswVlyYJA';
+
+      const geojson = {
+        'type': 'FeatureCollection',
+        'features': [
+          {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': [-107.151430, 42.849019],
+            },
+            'properties': {
+              'title': 'Focal Herd Project',
+              'description': 'Large mule deer GPS monitoring project in collaboration with the Wyoming Game and Fish Department with the goal of improving mule deer management and strengthening populations',
+              'markerIcon': 'map_icons/MuleDeer.png',
+              'researcher': 'Lucas Olson',
+              'circularImage': 'img/team/lucas_olson.png',
+            }
+          },
+          {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': [-108.790239, 43.346510], 
+            },
+            'properties': {
+              'title': 'Chronic Wasting Disease in Mue Deer',
+              'description': 'Tuckers research involves development and optimization of antemortem tests to detect chronic wasting disease (CWD). Additionally, he will assess habitat use and movement ecology of CWD positive and negative mule deer in central Wyoming. ',
+              'markerIcon': 'map_icons/MuleDeer.png',
+              'researcher': 'Tucker',
+              'circularImage': 'img/team/tucker.png',
+
+
+            }
+          },
+          {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': [-109.6526, 43.1835]
+            },
+            'properties': {
+              'title': 'Cognitation and Sociality in Group Dynamics',
+              'description': 'Anne is studying the role of cognition and sociality in group dynamics and collective decision making in migratory ungulates',
+              'markerIcon': 'map_icons/MuleDeer.png',
+              'circularImage': 'img/team/anne.png',
+              'researcher': 'Anne Scholle'
+
+            }
+          },
+          {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': [-115.5708, 51.1784]
+            },
+            'properties': {
+              'title': 'Banff Bison Study',
+              'description': 'Tana’s research focuses on the reintroduced bison population in Banff National Park, Canada, aiming to understand the underpinnings of how animals learn a novel environment and how that knowledge influences space use and home range formation',
+              'markerIcon': 'map_icons/Bison.png',
+              'circularImage': 'img/team/tana.png',
+              'researcher': 'Tana Vazuh'
+
+            }
+          },
+          {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': [-107.364040
+              , 41.1784]
+            },
+            'properties': {
+              'title': 'Golden Eagle Winter Movement around Anthropogenic Stimuli',
+              'description': 'Studying winter movement and behavior of golden eagles around anthropogenic stimuli in Wyoming.',
+              'circularImage': 'img/team/josh.png',
+              'markerIcon': 'map_icons/goldeneagle-removebg-preview.png',
+              'researcher': 'Josh Layfield'
+            }
+          },
+          {
+            'type': 'Feature',
+            'geometry': {
+              'type': 'Point',
+              'coordinates': [-111.023531
+              ,  44.968708]
+            },
+            'properties': {
+              'title': 'Ungulate Migrations in the GYE',
+              'description': 'Molly is studying ungulate migrations (bison, pronghorn, mule deer, elk) in the Greater Yellowstone Ecosystem.',
+              'circularImage': 'img/team/molly.png',
+              'markerIcon': 'map_icons/elk.png',
+              'researcher': 'Molly Caldwell'
+            }
+          },
+
+        ]
+      };
+      
+      
+
+      const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v11', //mapbox://styles/mapbox/satellite-streets-v12
+        zoom: 2.3,
+        center: [-95, 40],
+        projection: 'globe',
+        
+      });
+/*
+      map.on('load', () => {
+        // Set the default atmosphere style
+        map.setFog({});
+      }); */
+
+      // add markers to map
+// Add markers to the map
+for (const feature of geojson.features) {
+    const markerContainer = document.createElement('div');
+    markerContainer.className = 'marker-container'; // No need to add the "flashing" class here
+  
+    // Create a circle element for the background
+    const circle = document.createElement('div');
+    circle.className = 'circle flashing'; // Apply the "flashing" class to the circle
+    markerContainer.appendChild(circle);
+  
+    markerContainer.style.backgroundImage = `url('assets/${feature.properties.markerIcon}')`;
+  
+// Make a marker for each feature and add it to the map
+// JavaScript code for adding markers with popups
+new mapboxgl.Marker(markerContainer)
+  .setLngLat(feature.geometry.coordinates)
+  .setPopup(
+    new mapboxgl.Popup({ offset: 25 })
+      .setHTML(
+        `<div class="popup-content">
+          <div class="popup-image-container">
+            <img src="assets/${feature.properties.circularImage}" alt="Circular Image" class="circular-image">
+          </div>
+          <div class="popup-text-container">
+            <h3>${feature.properties.title}</h3>
+            <p><strong>Lead Scientist:</strong> ${feature.properties.researcher}</p>
+            <p>${feature.properties.description}</p>
+          </div>
+        </div>`
+      )
+  )
+  .addTo(map);
+  }
+  
+
+      
+    </script>
+  </body>
+</html>
