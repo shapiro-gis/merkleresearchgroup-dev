@@ -9,7 +9,149 @@
 # Set main reusable colors and fonts using CSS variables
 # Learn more about CSS variables at https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 --------------------------------------------------------------*/
+
+.site-blocks-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  background-color: black;
+  position: relative; }
+
+.site-blocks-cover.overlay {
+  position: relative; }
+
+.site-blocks-cover.overlay:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2); }
+
+.site-blocks-cover, .site-blocks-cover > .container > .row {
+  min-height: 600px;
+  height: calc(100vh); }
+
+.site-blocks-cover .img-wrap {
+  position: absolute;
+  z-index: -1;
+  width: calc(100% - 50%);
+  top: 0;
+  height: 100%;
+  z-index: 2;
+  right: 0; 
+  min-height: 600px;
+  overflow: hidden;
+  border-bottom-left-radius: 200px;
+
+}
+
+      
+@media (max-width: 991.98px) {
+  .site-blocks-cover .img-wrap {
+    width: 100%;
+    right: 0%;
+    top: 0; }
+
+.site-blocks-cover .img-wrap .hero-slider:before {
+  position: absolute;
+  content: "";
+  background: #000000;
+  opacity: .5;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; } }
+  .site-blocks-cover .img-wrap .slide {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transform: translateY(0); /* All slides start visible */
+    opacity: 1; /* Set opacity to 1 for all slides */
+    transition: transform 2.3s ease-in-out, opacity 0.2s ease-in-out; /* Add transitions for smooth animation */
+  }
+  
+  .site-blocks-cover .img-wrap .slide.active {
+    transform: translateY(100%); /* Active slide slides down */
+    opacity: 0; /* Active slide fades out */
+  }
+  
+
+.site-blocks-cover .img-wrap .slide img {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+      
+
+/* Default button styles */
+.custom-prev,
+.custom-next {
+    position: absolute;
+    bottom: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* Increased width to accommodate larger font-size */
+    height: 60px; /* Increased height to accommodate larger font-size */
+    font-size: 50px; /* Larger font-size */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust button positioning for screens with a width up to 767px */
+@media (max-width: 767px) {
+    .custom-prev {
+        left: 20px; /* Adjust positioning for smaller screens */
+    }
+    
+    .custom-next {
+        left: 80px; /* Adjust positioning for smaller screens */
+    }
+}
+
+/* Adjust button positioning for screens with a width between 768px and 991.98px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .custom-prev {
+        left: 50px; /* Adjust positioning for medium-sized screens */
+    }
+    
+    .custom-next {
+        left: 110px; /* Adjust positioning for medium-sized screens */
+    }
+}
+
+/* Adjust button positioning for screens with a width of 992px and above (large screens) */
+@media (min-width: 992px) {
+    .custom-prev {
+        left: 100px; /* Adjust positioning for larger screens */
+    }
+    
+    .custom-next {
+        left: 170px; /* Adjust positioning for larger screens */
+    }
+}
+
+    .custom-prev:hover,
+    .custom-next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
 /* Fonts */
+
+
 :root {
   --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-primary: "Roboto", sans-serif;
@@ -623,7 +765,7 @@ section {
     z-index: 99;
     opacity: 0;
     visibility: hidden;
-    background: #fff;
+    background: #000000;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
     transition: 0.3s;
   }
@@ -636,7 +778,7 @@ section {
     padding: 10px 20px;
     font-size: 15px;
     text-transform: none;
-    color: var(--color-default);
+    color: white;
     font-weight: 400;
   }
 
@@ -1452,10 +1594,13 @@ input[type='checkbox'] {
 # Alt Services Section
 --------------------------------------------------------------*/
 .alt-services .img-bg {
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
-  min-height: 400px;
+  min-height: 500px; /* Adjusted to a higher value */
+  width: 58%; /* Adjusted to take full width of its parent container */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
 }
+
 
 .alt-services h3 {
   font-size: 28px;
@@ -1636,6 +1781,19 @@ Image carousel ------------*/
   align-items: self-start;
 }
 
+.container-carousel .swiper-slide {
+  width: 400px;
+  height: 600px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: self-start;
+
+}
+
+
+
 .swiper-slide-active {
   filter: blur(0px);
 }
@@ -1694,13 +1852,13 @@ Image carousel ------------*/
 
 .swiper-slide--four {
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
-    url("../img/publications/ecologyletters.jpg")
+    url("../img/publications/Ecology_Letters.png")
       no-repeat 50% 50% / cover;
 }
 
 .swiper-slide--five {
   background: linear-gradient(to top, #0f2027, #203a4300, #2c536400),
-    url("../img/publications/journal_of_wildlife.jpg")
+    url("../img/publications/Journal_Animal_Ecology.png")
       no-repeat 50% 50% / cover;
 }
 .swiper-slide--six {
@@ -1713,6 +1871,8 @@ Image carousel ------------*/
 .swiper-3d .swiper-slide-shadow-right {
   background-image: none;
 }
+
+
 
 
 
@@ -1903,11 +2063,13 @@ Image carousel ------------*/
 /**********************************/
 .container {
   width: 100%;
-  padding-right: 80px;
-  padding-left: 80px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
 }
+
+
 
 @media (min-width: 576px) {
   .container {
@@ -2101,7 +2263,6 @@ Image carousel ------------*/
   background-position: center; /* Centers the image within the div */
   background-repeat: no-repeat; /* Prevents the image from repeating */
 }
-
 
 .container-card {
   width: 350px;
@@ -2317,9 +2478,46 @@ Image carousel ------------*/
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+
+.splash-box {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Adjust the width as needed */
+  max-width: 1000px; /* Set a maximum width for larger screens */
+  height: auto; /* Remove fixed height to allow content to expand the box */
+  max-height: 90%; /* Set a maximum height for larger screens */
+  background-color: rgba(255, 255, 255, 0.875);
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Add responsive CSS rules for adjusting font size, padding, and layout as needed */
+@media (max-width: 768px) {
+  .splash-box {
+    width: 90%; /* Adjust for smaller screens */
+    max-height: none; /* Remove max-height for smaller screens */
+  }
+
+  .contact .info-item {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  /* Add other responsive adjustments as needed */
+}
+
 .contact .info-item {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
-  padding: 20px 0 30px 0;
+  padding: 10px 0 20px 0;
 }
 
 .contact .info-item i {
@@ -2339,100 +2537,15 @@ Image carousel ------------*/
   font-size: 20px;
   color: #6c757d;
   font-weight: 700;
-  margin: 10px 0;
+  margin: 5px 0;
 }
+
 
 .contact .info-item p {
   padding: 0;
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
-}
-
-.contact .php-email-form {
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
-  padding: 30px;
-}
-
-.contact .php-email-form .form-group {
-  padding-bottom: 20px;
-}
-
-.contact .php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #df1529;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .error-message br+br {
-  margin-top: 25px;
-}
-
-.contact .php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.contact .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #059652;
-  border-top-color: #fff;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
-}
-
-.contact .php-email-form input,
-.contact .php-email-form textarea {
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-}
-
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--color-primary);
-}
-
-.contact .php-email-form input {
-  height: 44px;
-}
-
-.contact .php-email-form textarea {
-  padding: 10px 12px;
-}
-
-.contact .php-email-form button[type=submit] {
-  background: var(--color-primary);
-  border: 0;
-  padding: 10px 35px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 5px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: rgba(254, 185, 0, 0.8);
 }
 
 @keyframes animate-loading {
@@ -2563,7 +2676,7 @@ Image carousel ------------*/
 
 .hero .carousel-item::before {
   content: "";
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.515);
   position: absolute;
   inset: 0;
 }
@@ -2723,10 +2836,20 @@ font-size:16px;
 }
 
 
+
 /*--------------
 
 Testing for ino
 */
+
+.carousel-research {
+  position: absolute;
+  top: 15%; /* Adjust the top position as needed */
+  right: 0; /* Adjust the left position as needed */
+  width: 50%; /* Adjust the width as needed */
+  height: 100%; /* Adjust the height as needed */
+  z-index: 1002; /* Ensure it's above the iframe */
+}
 
 .custom-box {
   position: absolute;

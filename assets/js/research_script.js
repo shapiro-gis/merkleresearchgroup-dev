@@ -1,3 +1,5 @@
+
+
 // Function to filter publications based on selected filter options and search input
 function filterPublications() {
     const filterPubs = document.getElementById("filterPubs").value;
@@ -279,6 +281,7 @@ function filterPublications() {
                     app.carousel.state.downX = 0;
                 }
             },
+            /*
             init: function() {
                 document.addEventListener("keydown", app.carousel.keypress);
                // $('#carousel').addEventListener("click", app.carousel.select, true);
@@ -292,11 +295,11 @@ function filterPublications() {
                 $('#next').addEventListener("click", app.carousel.next);
                 app.selected = $(".selected");
     
-            },
+            }, */
             state: {}
     
         }
-        app.carousel.init();
+      /*  app.carousel.init(); */
     })();
     
       

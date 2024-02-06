@@ -37,12 +37,12 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex bg-black align-items-center">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+    <div class="container-fluid container-lg d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>Merkle Research Group<span></span></h1>
+        <h1>Merkle Research Group</h1>
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -50,9 +50,20 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">Who We Are</a></li>
-          <li><a href="code-tools.html">Code & Tools</a></li>
-          <li><a href="research.html">Research</a></li>
+          <li class="dropdown"><a href="about.html"><span>Who We Are</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="about.html#team">Meet the Lab</a></li>
+              <li><a href="about.html#join-us">Join Us</a></li>
+
+            </ul>
+          </li>          <li><a href="code-tools.html">Code & Tools</a></li>
+          <li class="dropdown"><a href="research.html"><span>Research</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="research.html#features">Research Overview</a></li>
+              <li><a href="research.html#publications-section">Publications</a></li>
+
+            </ul>
+          </li>          
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
@@ -77,14 +88,20 @@
     </div> -->
 
     </div>
+
+
     <div class="info d-flex align-items-center">
       <div class="container">
         <div class="row">
           
-          <div class="col-lg-6 text-center">
+          <div class="custom-box">
             
-            <h2 data-aos="fade-down" style="font-size: 50px;" >Movement and <span>Migration Ecology</span></h2>
-            <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started">Learn More <span>↓</span></a>
+            <h2 data-aos="fade-down" style="font-size: 60px; white-space: nowrap; text-align: center;">
+              Movement and <span style="display: block;">Migration Ecology</span>
+              <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started">Learn More <span>↓</span></a>
+
+          </h2>
+          
           
           </div>
 
@@ -99,7 +116,7 @@
     <div class="carousel-item active">
       <div class="video-container">
         <video autoplay muted loop id="video-background">
-          <source src="elk_migration.mp4" type="video/mp4">
+          <source src="drone_edit_20240206.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -112,7 +129,7 @@
 
         <!-- ======= About Section ======= -->
         <section id="about" class="about">
-          <div class="container-about" style = "padding-right:80px; padding-left:120px;">
+          <div class="container-about" style = "padding-right:50px; padding-left:180px;">
             
             <h2>Merkle Research Group</h2>
             <p>Our research is quantitative in nature, based in fundamental ecology and ecological theory, and conducted to address the needs of wildlife managers and conservation practitioners.
@@ -126,7 +143,7 @@
           </div>
     
           <!-- ===== Publication Carousel ====== -->
-        <div class="container-about" style = "padding-left: 0px; padding-right:50px; width:58%;">
+        <div class="container-about" style = "padding-left: 0px; padding-right:30px; width:58%;">
           <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide swiper-slide--one">

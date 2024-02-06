@@ -28,7 +28,6 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
 </head>
@@ -41,8 +40,7 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
+
         <h1>Merkle Research Group<span></span></h1>
       </a>
 
@@ -51,10 +49,21 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html" >Home</a></li>
-          <li><a href="about.html">Who We Are</a></li>
-          <li><a href="code-tools.html"  class="active">Code & Tools</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="dropdown"><a href="#"><span>Who We Are</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="about.html#team">Meet the Lab</a></li>
+              <li><a href="about.html#join-us">Join Us</a></li>
+
+            </ul>
+          </li>          <li><a href="code-tools.html"  class="active">Code & Tools</a></li>
+          <li class="dropdown"><a href="research.html"><span>Research</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="research.html#team">Research Overview</a></li>
+              <li><a href="research.html#join-us">Publications</a></li>
+
+            </ul>
+          </li>
+                    <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
 
@@ -90,7 +99,7 @@
                 <h2>Code & Tools</h2>
                 <p data-aos="fade-up">The Merkle Research groups manages wildlifemovetools.org, a platform used to host freely accessible 
                   geospatial data and a range of web application tools tailored for wildlife research and conservation in Wyoming and GYE.</p>
-                <a data-aos="fade-up" data-aos-delay="200" href="https://wildlifemovetools.org" class="btn-get-started">Visit wildlifemovetools.org</a>      
+                <a data-aos="fade-up" data-aos-delay="200" target=”_blank” href="https://wildlifemovetools.org" class="btn-get-started">Visit wildlifemovetools.org</a>      
               </div>
 
             </div>
@@ -161,6 +170,8 @@
       </div>
     </div>
   </section>
+
+  
   
   </main><!-- End #main -->
 

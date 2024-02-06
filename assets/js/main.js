@@ -1,10 +1,3 @@
-/**
-* Template Name: UpConstruction - v1.3.0
-* Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 var swiper = new Swiper('.slides-2.swiper', {
   slidesPerView: 1,
   spaceBetween: 30,

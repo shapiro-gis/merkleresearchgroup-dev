@@ -23,7 +23,6 @@
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
@@ -31,12 +30,15 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  
+  
+
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex bg-black align-items-center">
+<header id="header" class="header d-flex bg-black align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
@@ -50,9 +52,21 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html" >Home</a></li>
-          <li><a href="about.html" >Who We Are</a></li>
+          <li class="dropdown"><a href="about.html"><span>Who We Are</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="about.html#team">Meet the Lab</a></li>
+              <li><a href="about.html#join-us">Join Us</a></li>
+
+            </ul>
+          </li>
           <li><a href="code-tools.html">Code & Tools</a></li>
-          <li><a href="research.html" class="active">Research</a></li>
+          <li class="dropdown"><a href="research.html"  class="active"><span>Research</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="research.html#features">Research Overview</a></li>
+              <li><a href="research.html#publications-section">Publications</a></li>
+
+            </ul>
+          </li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
@@ -62,9 +76,7 @@
 
   <main id="main">
 
-    <section id="hero" class="hero">
-
-
+    <!--- 
       <div class="info d-flex align-items-center">
         <div class="container" style="max-width: 1000px; justify-content: center;">
             <div class="row">
@@ -73,7 +85,7 @@
                         <h4 data-aos="fade-up" data-aos-delay="200" style = "font-size:35px;">Our<strong style="font-weight: 600;"> Research</strong> vision is to uncover and understand novel patterns and processes in nature while conserving naturally functioning ecosystems.</h4>
                         <a data-aos="fade-up" data-aos-delay="200" href="#features" class="btn-get-started">Learn More <span>↓</span></a>
                     </div>
-                    <div class="paragraph" > <!-- Corrected Spelling and Changed Width -->
+                    <div class="paragraph" > 
                         <p data-aos="fade-up" style="font-size: 20px; color: rgb(255, 255, 255);  letter-spacing: 1px;">To ensure our research successfully contributes to advancing ecology and conservation, we actively collaborate with a multitude of partners including other researchers, regional and federal land and wildlife management agencies, and non-governmental organizations.
                           </p>
                           <br>
@@ -85,10 +97,7 @@
         </div>
     </div>
     
-      
-  
-  
-  
+    
       <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-item active">
           <div class="video-container">
@@ -100,34 +109,88 @@
   
     
   
+      </div>  -->
+
+    <section id="hero" class="hero">
+      
+      <div class="custom-box">
+        <div class = "info1">
+
+          <h2>Research</h2>
+          <p data-aos="fade-up">Our research vision is to uncover and understand novel patterns and processes in nature while conserving naturally functioning ecosystems.</p>
+            <p data-aos="fade-up">To ensure our research successfully contributes to advancing ecology and conservation, we actively collaborate with a multitude of partners including other researchers, regional and federal land and wildlife management agencies, and non-governmental organizations.
+              Our research is also supported by a wide range of federal, state, and private funders.
+            </p>
+            <a data-aos="fade-up" data-aos-delay="200" href="#features" class="btn-get-started">Learn More  <span>↓</span></a>
+          </div>
+
+          </div>
+
+      <div class="site-blocks-cover">
+        <div class = "carousel-research">
+      
+        <div class="container-carousel" style="padding-right: 0px; width:85%;">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide--one">
+                    <div>
+                    </div>
+                </div>
+                <div class="swiper-slide swiper-slide--two">
+                </div>
+    
+                <div class="swiper-slide swiper-slide--three">
+
+                </div>
+    
+                <div class="swiper-slide swiper-slide--four">
+
+                </div>
+    
+                <div class="swiper-slide swiper-slide--five">
+
+                </div>
+                
+                <div class="swiper-slide swiper-slide--six">
+
+                </div>
+            </div>
+     <!--       <div class="swiper-pagination"></div> -->
+        </div>
+        </div>
+        </div>
       </div>
-  
-    </section><!-- End Hero Section -->
+        <!--
+          <div class="img-wrap">
+              <div class="your-existing-css-class owl-carousel slide-one-item hero-slider">
 
+                  <div class="slide">
+                      <img src="assets/img/publications/Ecology_Letters.png">  
+                  </div>
+                  <div class="slide">
+                      <img src="assets/img/publications/frontiers_ecology.jpg" >  
+                  </div>
+                  <div class="slide">
+                    <img src="assets/img/publications/Ecology.png" >  
+                </div>
+                <div class="slide">
+                  <img src="assets/img/publications/Journal_Animal_Ecology.png" >  
+              </div>
+              <div class="slide">
+                <img src="assets/img/publications/ecology_evolution.jpg" >  
+            </div>
+            <div class="slide">
+              <img src="assets/img/publications/science.jpg">  
+          </div>
+                  
+              </div>
+              <button class="custom-prev">&larr;</button>
+              <button class="custom-next">&rarr;</button> 
+          </div>
 
-<!-- <section id="services-cards" class="services-cards">
-  <div class="container" data-aos="fade-up">
+      </div>--> <!-- END .site-blocks-cover -->
 
-    <div class="row gy-4">
-
-
-
-      <div class="col-lg-10 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-        <h3>We achieve this vision through quantitative research that is based in movement ecology and conducted to
-           address the needs of wildlife managers and conservation practitioners.
-        </h3>
-        <p>To ensure our research successfully contributes to advancing ecology and conservation, we actively collaborate with
-           a multitude of partners including other researchers, regional and federal land and wildlife management agencies, 
-           and non-governmental organizations. Our research is also supported by a wide range of federal, state, and private funders.
-        </p>
-      </div>
-
-
-    </div>
-
-  </div>
-</section>-->
-
+  </section>
 
         <!-- ======= Features Section ======= -->
         <section id="features" class="features section-bg">
@@ -155,13 +218,13 @@
     
               <li class="nav-item col-3">
                 <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-                  <h4>Environmental Change
+                  <h4>Habitat alteration
                   </h4>
                 </a><!-- End tab nav item -->
     
               <li class="nav-item col-2">
                 <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                  <h4>Cognition
+                  <h4>Memory and learning
                   </h4>
                 </a>
               </li><!-- End tab nav item -->
@@ -286,36 +349,7 @@
             <h2>Publications</h2>
             <p>Peer-reviewed (bold represents Merkle Research Group). Use the filters below to refine your publication search.</p>
 
-     <!--
-            <section>
-              <div class="swiper" style = "width:75%;">
-                  <div class="swiper-wrapper">
-                      <div class="swiper-slide swiper-slide--one">
-                          <div>
-                          </div>
-                      </div>
-                      <div class="swiper-slide swiper-slide--two">
-                      </div>
-          
-                      <div class="swiper-slide swiper-slide--three">
-  
-                      </div>
-          
-                      <div class="swiper-slide swiper-slide--four">
-  
-                      </div>
-          
-                      <div class="swiper-slide swiper-slide--five">
-  
-                      </div>
-                      
-                      <div class="swiper-slide swiper-slide--six">
-  
-                      </div>
-                  </div>
-                  <div class="swiper-pagination"></div>
-              </div>
-          </section> -->
+
           </div>
           <div class="container" data-aos="fade-up" style="max-width: 1100px; margin: 0 auto;">
 
@@ -614,6 +648,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Vendor JS Files -->
@@ -623,11 +658,44 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <!-- Template Main JS File -->
+  <!-- Template Main JS File 
+  <script src="assets/js/pub_carousel.js"></script> -->
+
   <script src="assets/js/main.js"></script>
   <script src="assets/js/research_script.js"></script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  
+  <script>
+    var swiper = new Swiper(".swiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: true
+      },
+      spaceBetween: 60,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      autoplay: {
+        delay: 3000, // Set the delay between slides in milliseconds (e.g., 3000 = 3 seconds)
+        disableOnInteraction: false // Allow autoplay to continue even when the user interacts with the slider
+      }
+    });
+  </script>
 
 </body>
 

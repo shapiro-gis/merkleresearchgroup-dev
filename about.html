@@ -55,10 +55,22 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html" >Home</a></li>
-          <li><a href="about.html" class="active">Who We Are</a></li>
+          <li class="dropdown" class = "active"><a href="about.html" class="active"><span>Who We Are</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="about.html#team">Meet the Lab</a></li>
+              <li><a href="about.html#join-us">Join Us</a></li>
+
+            </ul>
+          </li>
           <li><a href="code-tools.html">Code & Tools</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="dropdown"><a href="research.html"><span>Research</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="research.html#features">Research Overview</a></li>
+              <li><a href="research.html#publications-section">Publications</a></li>
+
+            </ul>
+          </li>     
+                    <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -98,7 +110,7 @@
                   including research scientists, postdocs, master's students, 
                   and PhD students, all guided by the expertise and leadership of Jerod Merkle. </p>
                   <p data-aos="fade-up">Interact with the map to see the lab's active projects.</p>
-                  <a data-aos="fade-up" data-aos-delay="200" href="#team" class="btn-get-started">Meet the Lab</a>
+                  <a data-aos="fade-up" data-aos-delay="200" href="#team" class="btn-get-started">Meet the Lab  <span>↓</span></a>
                 </div>
 
                 </div>
@@ -237,6 +249,17 @@
           <div class="team-content">
               <h2>Tana Verzuh</h2>
               <h3>PhD Student</h3>
+          </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="team-6">
+        <div class="team-img" data-tab="team12">
+          <img src="assets/img/team/kurt_smith.png" alt="Team Image">
+          </div>
+          <div class="team-content">
+              <h2>Kurt Smith</h2>
+              <h3>Research Scientist</h3>
           </div>
       </div>
     </div>
@@ -589,12 +612,76 @@
                 </div>
               </div>
 
+            <!-- Popup for Team Member 12 -->
+            <div class="popup_wrap" id="team12">
+              <div class="overlay"></div>
+    
+              <div class="popup_box">
+                <div class="close_btn"></div>
+                <div class="left_image">
+                  <img src="assets/img/team/kurt_smith.png" alt="Kurt"/>
+                  <span class="email">
+                  <strong>Email:</strong> ksmith94@uwyo.edu
+                  </span>
+                </div>
+    
+                <div class="right_content">
+                  <h2>Kurt Smith<br>
+                    <span class="status">Research Scientist</span>
+                  </h2>
+                  <p>
+                    <!-- Content for Team Member 12-->
+                    Kurt grew up and Pennsylvania and slowly migrated west to pursue opportunities in wildlife ecology and management. 
+                    He has a B.S. in biology from Mansfield University, an M.S. in fisheries ecology and management from Southern Illinois
+                     University and earned his PhD in ecology at the University of Wyoming in 2016. His primary motivation is to bring scientific understanding and management tools that can be applied by resource managers to facilitate species conservation. In his free time, 
+                    Kurt enjoys many of the seasonal outdoor recreational opportunities that Wyoming has to offer.
+                  </p>
+                               
+                    </div>
+                </div>
+              </div>
+
+    <!-- ======= Join Us Section ======= -->
+    <section id="join-us" class="alt-services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-around gy-2">
+          <div class="col-lg-5 d-flex flex-column justify-content-center">
+            <h3>Join Us</h3>
+            <p>
+              Students within the Merkle Research Group are expected to develop and apply theoretical concepts in ecology while also contributing to wildlife conservation and management. Students are also expected to participate in a team environment, present results at professional conferences and agency meetings, publish results in a timely manner in peer-reviewed scientific outlets, and assist with preparation of grant proposals.
+ 
+            </p>
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+              <div>
+                <p>
+                  Prospective students with experience conducting and publishing research, working in GIS, and managing and analyzing large datasets in program R are especially encouraged to inquire.
+                  Please email Dr. Jerod Merkle for more information.</p>
+                  <br>
+                  <p>
+                    *Read the Merkle Research Group’s Vision, Philosophy, Policies, and Expectations <a href = "assets/docs/The-Merkle-Lab-Vision.pdf">here.</a>
+
+                  </p>
+                  <br>
+                  <p>
+                  *Each student in the Merkle Research Group develops a mentoring plan and updates it biannually. The mentoring plan rubric is <a href ="assets/docs/Merkle_MentoringPlan_rubric_dec2018.docx">here</a>.
+                </p>
+                </div>
+            </div>
 
 
+          </div>
 
-     
+          <div class="col-lg-3 img-bg" style="background-image: url(assets/img/team_photo.jpg);"  data-aos-delay="100"></div>
+        </div>
 
-      <!-- Banner Start -->
+      </div>
+    </section><!-- End Alt Services Section 2 -->
+
+
+     <!-- 
+
   <section id="call-to-action" class="call-to-action">
     <div class="container" data-aos="fade-up">
       <div class="row justify-content-center">
@@ -618,7 +705,8 @@
       </div>
 
     </div>
-  </section><!-- End Call To Action Section -->
+  </section>
+-->
 
 
   <!--- ====== Lab Alumni Section =======-->
