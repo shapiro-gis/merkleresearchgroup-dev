@@ -2641,6 +2641,7 @@ Image carousel ------------*/
 .hero {
   overflow-x: hidden;
   padding: 0;
+  position: relative;
 }
 
 .hero .carousel {
@@ -2718,12 +2719,25 @@ Image carousel ------------*/
   position: relative;
 }
 
+.hero .heading-main h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  font-size: 60px;
+    font-weight: 700;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+}
+
+
 .hero h4 {
   color: #fff;
   font-size: 28px;
   font-weight: 200;
 
 }
+
 
 /* This is the line between the heading and paragraph  
 .hero .info h2:after {
@@ -2853,12 +2867,40 @@ Testing for ino
 
 .custom-box {
   position: absolute;
-  top: 25%; /* Adjust the top position as needed */
-  left: 10%; /* Adjust the left position as needed */
-  width: 30%; /* Adjust the width as needed */
-  height: 100px; /* Adjust the height as needed */
-  z-index: 1002; /* Ensure it's above the iframe */
-  padding: 10px; /* Add padding or styling as needed */
+  top: 25%;
+  left: 10%;
+  width: 30%;
+  height: 100px;
+  z-index: 1002;
+  padding: 10px;
+}
+
+/* Adjustments for tablets */
+@media (max-width: 768px) {
+  .custom-box {
+    top: 20%; /* Adjust top position for smaller screens */
+    left: 5%; /* Adjust left position for better alignment */
+    width: 40%; /* Increase width to fit content */
+  }
+}
+
+/* Adjustments for mobile phones */
+@media (max-width: 480px) {
+  .custom-box {
+    position: relative; /* Change positioning for mobile */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width on small screens */
+    margin: 0 auto; /* Center align the box */
+    height: auto; /* Auto height for dynamic content size */
+    padding: 20px; /* Adjust padding as needed */
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-box .h2  {
+    font-size: 20px;
+  }
 }
 
 .hero .info1 h2 {
@@ -2887,6 +2929,12 @@ Testing for ino
 .hero .info1 p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .hero .info1 p  {
+    font-size: 16px;
+  }
 }
 
 .hero .info1 .btn-get-started {
@@ -3481,9 +3529,27 @@ Testing for ino
 
 .container-about {
   width: 40%; /* Set the width of each container to 50% to make them side by side */
-  padding: 80px; /* Add padding to the containers */
+  padding: 20px; /* Add padding to the containers */
   box-sizing: border-box; /* Include padding and border in the total width */
   float: left; /* Float the containers to make them sit next to each other */
+}
+
+@media (max-width: 768px) {
+  .container-about {
+    padding: 0px;
+    width: 100%; /* Set the width of each container to 50% to make them side by side */
+
+  }
+}
+.container-pubs{
+  top: 50%;
+  padding-left: 0px; padding-right:30px; width:58%;
+}
+
+@media (max-width: 768px) {
+  .container-pubs {
+    padding-right:0px; width:10%;
+  }
 }
 
 .clear {
@@ -3538,4 +3604,10 @@ Testing for ino
 
 .container-about .btn-get-started:hover {
   background: var(--color-secondary);
+}
+
+@media (max-width: 768px) {
+  .container-about  .h2  {
+    font-size: 20px;
+  }
 }

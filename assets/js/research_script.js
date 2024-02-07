@@ -8,26 +8,39 @@ function filterPublications() {
     const searchInput = document.getElementById("searchInput").value.toLowerCase();
     const publicationList = document.getElementById("publicationList");
     const publicationItems = publicationList.querySelectorAll("li");
-  
+
+    let visibleCount = 0; // Initialize counter for visible items
+
     publicationItems.forEach((publication) => {
         const pubs = publication.getAttribute("data-pubs");
         const year = publication.getAttribute("data-year");
         const type = publication.getAttribute("data-type");
-        const content = publication.textContent.toLowerCase(); // Get the entire content
-  
+        const content = publication.textContent.toLowerCase();
+
         if (
-            (filterPubs === "all" || filterPubs === pubs) &&
+            (filterPubs === "all" || pubs.includes(filterPubs)) &&
             (filterYear === "all" || filterYear === year) &&
-            (filterType === "all" || filterType === type) &&
+            (filterType === "all" || type.includes(filterType)) &&
             (content.includes(searchInput))
         ) {
             publication.style.display = "block";
+            visibleCount++; // Increment only for visible items
+
+            // Find the <a> element within the <h4>
+            const aElement = publication.querySelector('h4 a');
+            if (!aElement.hasAttribute('data-original-text')) {
+                aElement.setAttribute('data-original-text', aElement.textContent);
+            }
+            // Prepend the counter to the <a> tag's text
+            const originalText = aElement.getAttribute('data-original-text');
+            aElement.textContent = `${visibleCount}. ${originalText}`;
         } else {
             publication.style.display = "none";
         }
     });
-  }
-  
+}
+
+
   // Event listeners for filter options and search input
   document.getElementById("filterPubs").addEventListener("change", filterPublications);
   document.getElementById("filterYear").addEventListener("change", filterPublications);
@@ -107,6 +120,10 @@ function filterPublications() {
         // Scroll to the target section
         publicationsSection.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling
     });
+
+
+
+    
 
     var swiper = new Swiper(".swiper", {
         effect: "coverflow",
